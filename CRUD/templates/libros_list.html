@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for Libros in libro %}
+    <div>
+        <h3><a href="">{{ Libros.Titulo }}</a></h3>
+        <p>{{ Libros.Genero }}</p>
+        <p>{{ Libros.Resena|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
+</body>
