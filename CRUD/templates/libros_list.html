@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for Libros in libro %}
+{% for lbrs in libro %}
     <div class="post">
-        <h3><a href="{% url 'Libros.views.detalle_libro' pk=Libros.pk %}">{{ Libros.Titulo }}</a></h3>
-        <p>{{ Libros.Genero }}</p>
-        <p>{{ Libros.Resena|linebreaksbr }}</p>
+        <h3><a href="{% url 'CRUD.views.libro_detalle' pk=lbrs.pk %}">{{ lbrs.Titulo }}</a></h3>
+        <p>{{ lbrs.Genero }}</p>
+        <p>{{ lbrs.Resena|linebreaksbr }}</p>
     </div>
 {% endfor %}
 {% endblock %}
