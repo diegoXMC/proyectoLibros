@@ -3,6 +3,9 @@
 {% block content %}
   <div class="post">
     <h1>{{ libro.Titulo }}</h1>
+    {% for at in autor %}
+    <h3>{{ at.Autor }}</h3>
+    {% endfor %}
     <p>{{ libro.Resena|linebreaksbr }}</p>
   </div>
 {% endblock %}

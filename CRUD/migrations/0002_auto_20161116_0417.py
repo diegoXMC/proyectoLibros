@@ -14,13 +14,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Asignacion2',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
             ],
         ),
         migrations.CreateModel(
             name='Autores',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, primary_key=True, auto_created=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
                 ('NombreA', models.CharField(max_length=200)),
             ],
         ),
@@ -41,6 +41,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='libros',
             name='Autor',
-            field=models.ManyToManyField(through='CRUD.Asignacion2', to='CRUD.Autores'),
+            field=models.ManyToManyField(to='CRUD.Autores', through='CRUD.Asignacion2'),
         ),
     ]

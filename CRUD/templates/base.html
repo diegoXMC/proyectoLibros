@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div class="page-header">
-        <h1><a href="/">Django Girls Blog</a></h1>
+       <a href="{% url 'CRUD.views.libro_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+       <h1><a href="{% url 'CRUD.views.show_libros' %}">Libros</a></h1>
+       {% if usuario %}
+       <h3><a href="{% url 'CRUD.views.cerrar' %}">Cerrar Sesion</a></h3>
+       {% endif %}
     </div>
     <div class="content container">
         <div class="row">
