@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
 {% block content %}
-    <h1>Nuevo Libro</h1>
+  <header>
+    <h2>Nuevo Libro</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ formulario.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
+  </header>
 {% endblock %}

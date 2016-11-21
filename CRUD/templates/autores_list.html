@@ -1,10 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% block content %}
+    <footer>
+      <a href="{% url 'CRUD.views.autores_nuevo' %}" class="button style2 scrolly">Nuevo Autor</a>
+    </footer>
 {% for aut in autor %}
-    <div class="post">
-        <h3>{{ aut.NombreA }}</h3>
-        <a class="btn btn-default" href="{% url 'CRUD.views.autores_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'CRUD.views.autores_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
-    </div>
+    <br>
+    <header>
+      <h3>{{ aut.NombreA }}</h3>
+    </header>
+    <a class="btn btn-default" href="{% url 'CRUD.views.autores_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'CRUD.views.autores_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
+    <br>
 {% endfor %}
 {% endblock %}

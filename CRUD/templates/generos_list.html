@@ -1,10 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% block content %}
-{% for aut in genero %}
-    <div class="post">
-        <h3>{{ aut.NombreG }}</h3>
-        <a class="btn btn-default" href="{% url 'CRUD.views.generos_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'CRUD.views.generos_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
-    </div>
-{% endfor %}
+    <footer>
+      <a href="{% url 'CRUD.views.generos_nuevo' %}" class="button style2 scrolly">Nuevo Genero</a>
+    </footer>
+    {% for aut in genero %}
+    <br>
+    <header>
+      <h2>{{ aut.NombreG }}</h2>
+    </header>
+    <a class="btn btn-default" href="{% url 'CRUD.views.generos_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'CRUD.views.generos_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
+    <br>
+    {% endfor %}
 {% endblock %}
