@@ -18,6 +18,11 @@
     <div class="page-header">
        <a href="{% url 'CRUD.views.libro_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
        <h1><a href="{% url 'CRUD.views.show_libros' %}">Libros</a></h1>
+       <br>
+       <h2><a href="{% url 'CRUD.views.show_autores' %}">Ver Autores</a>
+       <a class="btn btn-default" href="{% url 'CRUD.views.autores_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></h2>
+       <h2><a href="{% url 'CRUD.views.show_generos' %}">Ver Generos</a>
+       <a class="btn btn-default" href="{% url 'CRUD.views.generos_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></h2>
        {% if usuario %}
        <h3><a href="{% url 'CRUD.views.cerrar' %}">Cerrar Sesion</a></h3>
        {% endif %}

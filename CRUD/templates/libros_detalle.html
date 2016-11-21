@@ -3,6 +3,8 @@
 {% block content %}
   <div class="post">
     <h1>{{ libro.Titulo }}</h1>
+    <a class="btn btn-default" href="{% url 'CRUD.views.libro_editar' pk=libro.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'CRUD.views.libro_borrar' pk=libro.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
     {% for at in autor %}
     <h3>{{ at.Autor }}</h3>
     {% endfor %}

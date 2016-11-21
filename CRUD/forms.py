@@ -1,5 +1,5 @@
 from django import forms
-from .models import Libros, Autores
+from .models import Libros, Autores, Generos
 
 class LibroForm(forms.ModelForm):
 
@@ -17,3 +17,15 @@ def __init__ (self, *args, **kwargs):
     self.fields["Editorial"].widget = forms.widgets.CheckboxSelectMultiple()
     self.fields["Editorial"].help_text = "Editoriales del Libro"
     self.fields["Editorial"].queryset = Editoriales.objects.all()
+
+class AutorForm(forms.ModelForm):
+
+  class Meta:
+    model = Autores
+    fields = ('NombreA',)
+
+class GeneroForm(forms.ModelForm):
+
+  class Meta:
+    model = Generos
+    fields = ('NombreG',)

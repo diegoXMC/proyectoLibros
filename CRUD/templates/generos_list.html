@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for aut in genero %}
+    <div class="post">
+        <h3>{{ aut.NombreG }}</h3>
+        <a class="btn btn-default" href="{% url 'CRUD.views.generos_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'CRUD.views.generos_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
+    </div>
+{% endfor %}
+{% endblock %}
