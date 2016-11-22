@@ -11,10 +11,10 @@
 		{% block style_css %}{% endblock %}
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body style="background-image: url('{% static 'img/overlay.png' %}'), url('{% static 'images/bg.jpg' %}');">
+	<body style="background-image: url('{% static 'img/overlay.png' %}');">
 
 		<!-- Header -->
-			<section id="header" style="">
+			<section id="header">
 				<header>
 					<h1>LIBROS</h1>
 					<p>Reseñas</p>
@@ -32,8 +32,7 @@
 
 		<!-- Banner -->
 			<section id="banner" style="background: #35b88f url('{% static 'img/banner.svg' %}') bottom center no-repeat;">
-				<!-- boton para agregar libro -->
-				
+
 				{% block content %}
 				{% endblock %}
 
@@ -46,13 +45,16 @@
 			<div class="copyright">
 				<ul class="menu">
 					<li>&copy; Untitled. All rights reserved.</li>
-					{% if usuario %}
+					{% if usuario.is_authenticated %}
 	        <li><a href="{% url 'CRUD.views.cerrar' %}">Cerrar Sesion</a></li>
+					{% else %}
+					<li><a href="{% url 'CRUD.views.ingresar' %}">Iniciar Sesion</a></li>
+					<li><a href="{% url 'CRUD.views.nuevo_usuario' %}">Registrate</a></li>
 	        {% endif %}
 				</ul>
 			</div>
 		</section>
-
-
+<a href="{% url 'CRUD.views.ingresar' %}">Iniciar Sesion</a>
+<a href="{% url 'CRUD.views.nuevo_usuario' %}">< style="text-align: rigth">Registrate</h2></a>
 	</body>
 </html>

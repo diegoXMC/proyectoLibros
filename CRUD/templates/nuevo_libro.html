@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
+<div style="width: 1000px; margin: 0 auto;">
   <header>
     <h2>Nuevo Libro</h2>
     <form method="POST" class="post-form">{% csrf_token %}
@@ -8,4 +9,5 @@
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
   </header>
+</div>
 {% endblock %}

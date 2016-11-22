@@ -8,8 +8,10 @@
     <header>
       <h3>{{ aut.NombreA }}</h3>
     </header>
-    <a class="btn btn-default" href="{% url 'CRUD.views.autores_editar' pk=aut.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    <a class="btn btn-default" href="{% url 'CRUD.views.autores_borrar' pk=aut.pk %}"><span class="glyphicon glyphicon-minus"></span></a>
-    <br>
+    <a class="btn btn-default" href="{% url 'CRUD.views.autores_editar' pk=aut.pk %}">
+      <span class="glyphicon glyphicon-pencil"  style="background-color: #000000"></span></a>
+      
+    <a class="btn btn-default" href="{% url 'CRUD.views.autores_borrar' pk=aut.pk %}">
+      <span class="glyphicon glyphicon-minus"  style="background-color: #000000"></span></a>
 {% endfor %}
 {% endblock %}
