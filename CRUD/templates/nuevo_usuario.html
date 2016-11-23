@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div style="width: 1000px; margin: 0 auto;">
+<div style="width: 70%; margin: 0 auto;">
     <header>
       <form method="POST" class="post-form">{% csrf_token %}
           {{ formulario.as_p }}

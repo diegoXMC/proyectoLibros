@@ -11,7 +11,7 @@
 		{% block style_css %}{% endblock %}
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
-	<body style="background-image: url('{% static 'img/overlay.png' %}');">
+	<body style="background-image: url('{% static 'img/overlay.png' %}'), url('{% static 'images/bg.jpg' %}');">
 
 		<!-- Header -->
 			<section id="header">
@@ -54,7 +54,5 @@
 				</ul>
 			</div>
 		</section>
-<a href="{% url 'CRUD.views.ingresar' %}">Iniciar Sesion</a>
-<a href="{% url 'CRUD.views.nuevo_usuario' %}">< style="text-align: rigth">Registrate</h2></a>
 	</body>
 </html>
